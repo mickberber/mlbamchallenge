@@ -8,6 +8,7 @@
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "build": "webpack --progress --colors",
+    "hot-reload": "webpack-dev-server",
     "lint": "eslint server/**.js; eslint public/**.js; true"
   },
   "keywords": [],
