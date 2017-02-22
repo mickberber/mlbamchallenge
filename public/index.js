@@ -1,6 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './src/app';
+import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(<App />, document.querySelector('.attach'));
+import App from './src/components/app';
+
+const render = (Component) => {
+  ReactDOM.render(<AppContainer>
+    <Component />
+  </AppContainer>, document.querySelector('.attach'));
+}
+
+render(App);
+
+if(module.hot) {
+  module.hot.accept('./src/app', () => {
+    render(App);
+  });
+}

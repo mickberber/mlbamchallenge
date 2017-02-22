@@ -23,5 +23,5 @@ module.exports = (app, express) => {
   app.use('/api/root', rootRouter);
   rootRouterConfig(rootRouter);
 
-  app.use('/', express.static(path.join(__dirname, '../public')));
+  app.use('/', express.static(path.join(__dirname, '../public/dist')));
 }
