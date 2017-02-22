@@ -10,12 +10,8 @@ middleware(app, express);
 
 app.use('/', express.static(path.join(__dirname, '../public')));
 
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
-
 const PORT = process.env.PORT;
 
 const server = app.listen(PORT, () => {
-  console.log('listening at ' + server.address().port + '....')
+  console.log('listening at ' + server.address().port + '....');
 });
