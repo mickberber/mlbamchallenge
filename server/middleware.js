@@ -4,6 +4,7 @@ const compression = require('compression');
 const path = require('path');
 
 const utils = require('./utils');
+const rootRouterConfig = require('./routes/root');
 
 module.exports = (app, express) => {
   app.use(morgan('dev'));
@@ -17,6 +18,10 @@ module.exports = (app, express) => {
 
   app.use(utils.errorHandler);
   app.use(utils.logError);
+
+  const rootRouter = express.Router();
+  app.use('/api/root', rootRouter);
+  rootRouterConfig(rootRouter);
 
   app.use('/', express.static(path.join(__dirname, '../public')));
 }
