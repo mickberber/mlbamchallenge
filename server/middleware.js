@@ -1,6 +1,8 @@
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const path = require('path');
+
 const utils = require('./utils');
 
 module.exports = (app, express) => {
@@ -15,4 +17,6 @@ module.exports = (app, express) => {
 
   app.use(utils.errorHandler);
   app.use(utils.logError);
+
+  app.use('/', express.static(path.join(__dirname, '../public')));
 }
