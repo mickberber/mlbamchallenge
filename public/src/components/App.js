@@ -3,7 +3,7 @@ import './../styles/main.css';
 
 const App = () => {
   return (
-    <div className='main'>works on </div>
+    <div className='main'>this should be blue</div>
   );
 }
 
