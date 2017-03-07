@@ -9,6 +9,7 @@ import {
 
 let initialState = {
   games: [],
+  selectedIndex: 0,
   date: ''
 };
 
@@ -19,7 +20,9 @@ const rootReducer = (state = initialState, action) => {
         games: action.games,
       })
     case HANDLE_KEY_DOWN:
-      return {}
+      return Object.assign({}, state, {
+        selectedIndex
+      })
     default:
       return state
   }

@@ -30,9 +30,7 @@ const fetchGames = (url) => {
 }
 
 export const getGames = () => {
-  console.log('in')
   return (dispatch) => {
-    console.log('in2')
     return fetchGames().then((res) => {
       dispatch(loadGames(res.data.data.games.game))
     }).catch((error) => dispatch(handleError(error)))

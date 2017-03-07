@@ -14,7 +14,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     games: state.games,
-    date: state.date
+    date: state.date,
+    selectedIndex: state.selectedIndex
   };
 };
 

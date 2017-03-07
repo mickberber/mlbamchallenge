@@ -8,11 +8,22 @@ body {
   padding: 25% 0;
 }
 
+.selected_game_thumb {
+  display: inline-block;
+  color: white;
+  width: 250px;
+  height: 250px;
+  padding: 0 25px;
+  margin: 0 25px;
+  background-color: blue;
+}
+
 .game_thumb {
   display: inline-block;
   color: white;
   width: 200px;
   height: 200px;
   margin: 0 25px;
+  padding: 0 25px;
   background-color: blue;
 }
