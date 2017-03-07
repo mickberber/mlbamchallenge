@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 
 import App from '../components/App';
-import { loadGames } from '../actions/index';
+import { getGames } from '../actions/index';
 
-const mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return {
-    loadGames: () => {}
+    loadGames: () => {
+      dispatch(getGames());
+    }
   };
 };
 
-const mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     games: state.games,
     date: state.date

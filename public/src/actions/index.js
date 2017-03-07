@@ -2,21 +2,9 @@ import axios from 'axios';
 
 export const LOAD_GAMES = 'LOAD_GAMES';
 export const HANDLE_KEY_DOWN = 'HANDLE_KEY_DOWN';
-export const ERROR_HANLDE = 'ERROR_HANLDE';
+export const ERROR_HANDLE = 'ERROR_HANDLE';
 const default_url = 'http://gdx.mlb.com/components/game/mlb/year_2016/month_05/day_20/master_scoreboard.json';
 
-const fetchGames = (url) => {
-  return axios.get(default_url);
-}
-
-export const getGames = (date) => {
-  return (dispatch) => {
-    return fetchGames().then(
-      res => dispatch(loadGames(res.data.data.games.game)),
-      error => dispatch(handleError(error))
-    );
-  };
-};
 
 const loadGames = (games) => {
   return {
@@ -26,7 +14,7 @@ const loadGames = (games) => {
 }
 
 const handleError = (error) => {
-  type: ERROR_HANLDE,
+  type: ERROR_HANDLE,
   error
 }
 
@@ -36,3 +24,17 @@ const handleKeyDown = (key) => {
     key
   };
 }
+
+const fetchGames = (url) => {
+  return axios.get(default_url);
+}
+
+export const getGames = () => {
+  console.log('in')
+  return (dispatch) => {
+    console.log('in2')
+    return fetchGames().then((res) => {
+      dispatch(loadGames(res.data.data.games.game))
+    }).catch((error) => dispatch(handleError(error)))
+  };
+};
