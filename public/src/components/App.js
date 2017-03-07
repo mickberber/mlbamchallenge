@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import styles from './../styles/main.css';
 import axios from 'axios';
 
+import styles from './../styles/main.css';
 import Game from './Game';
 import Loading from './Loading';
 
@@ -33,7 +33,7 @@ class App extends Component {
                    style={styles.game_container}
                    game={game} />
     });
-    return (<div className={styles.main_background}>
+    return (<div>
       <div className={styles.game_container}>
         {games}
       </div>

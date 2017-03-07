@@ -1,8 +1,18 @@
-.main_background {
-  /*background-image: url('http://mlb.mlb.com/mlb/images/devices/ballpark/1920x1080/1.jpg');*/
+body {
+  background-image: url('http://mlb.mlb.com/mlb/images/devices/ballpark/1920x1080/1.jpg');
+  background-size: cover;
 }
 
 .game_container {
-  width: 500px;
-  height: 500px;
+  white-space: nowrap;
+  padding: 25% 0;
+}
+
+.game_thumb {
+  display: inline-block;
+  color: white;
+  width: 200px;
+  height: 200px;
+  margin: 0 25px;
+  background-color: blue;
 }

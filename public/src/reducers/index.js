@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import {
   LOAD_GAMES,
   HANDLE_KEY_DOWN
@@ -8,7 +9,7 @@ let initialState = {
   games: [],
 };
 
-const reducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
   switch(action.type) {
     case LOAD_GAMES:
       return {}
@@ -17,6 +18,9 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducer);
+const store = createStore(
+  rootReducer,
+  appplyMiddleware(thunk)
+);
 
 export default store;

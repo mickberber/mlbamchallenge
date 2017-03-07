@@ -1,14 +1,19 @@
 import { connect } from 'react-redux';
 
 import App from '../components/App';
-import {} from '../actions/index';
+import { loadGames } from '../actions/index';
 
 const mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    loadGames: () => {}
+  };
 };
 
 const mapStateToProps(state) {
-  return {};
+  return {
+    games: state.games,
+    date: state.date
+  };
 };
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(App);
