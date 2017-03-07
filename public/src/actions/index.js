@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const LOAD_GAMES = 'LOAD_GAMES';
-export const HANDLE_KEY_DOWN = 'HANDLE_KEY_DOWN';
+export const UPDATE_INDEX = 'UPDATE_INDEX';
 export const ERROR_HANDLE = 'ERROR_HANDLE';
 const default_url = 'http://gdx.mlb.com/components/game/mlb/year_2016/month_05/day_20/master_scoreboard.json';
 
@@ -18,10 +18,10 @@ const handleError = (error) => {
   error
 }
 
-const handleKeyDown = (key) => {
+export const updateIndex = (index) => {
   return {
-    type: HANDLE_KEY_DOWN,
-    key
+    type: UPDATE_INDEX,
+    selectedIndex: index
   };
 }
 

@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
 
 import App from '../components/App';
-import { getGames } from '../actions/index';
+import { getGames, updateIndex } from '../actions/index';
 
 const mapDispatchToProps = (dispatch) => {
   return {
     loadGames: () => {
       dispatch(getGames());
+    },
+    updateIndex: (newIndex) => {
+      dispatch(updateIndex(newIndex));
     }
   };
 };

@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import {
   LOAD_GAMES,
-  HANDLE_KEY_DOWN,
+  UPDATE_INDEX,
   ERROR_HANDLE
 } from '../actions/index';
 
@@ -19,9 +19,9 @@ const rootReducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         games: action.games,
       })
-    case HANDLE_KEY_DOWN:
+    case UPDATE_INDEX:
       return Object.assign({}, state, {
-        selectedIndex
+        selectedIndex: action.selectedIndex,
       })
     default:
       return state

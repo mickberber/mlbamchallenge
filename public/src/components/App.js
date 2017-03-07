@@ -4,23 +4,38 @@ import styles from './../styles/main.css';
 import Game from './Game';
 import Loading from './Loading';
 
-const App = ({ loadGames, games, date, selectedIndex }) => {
-  console.log(games)
-
+const App = ({ loadGames, updateIndex, games, date, selectedIndex }) => {
   if(!games.length) {
     loadGames();
     return (<Loading />);
   }
 
-  // window.
-
-  return (<div className={styles.game_container}>
-    {games.map((game, i) => {
-      if(selectedIndex === i) {
-        return (<Game key={i} game={game} selected={true} />);
+  window.onkeydown = (e) => {
+    if(e.key === 'ArrowRight' && selectedIndex !== games.length - 1) {
+      updateIndex(selectedIndex + 1);
+      if(selectedIndex > 2) {
+        document.body.scrollLeft += 200;
       }
-      return (<Game key={i} game={game} selected={false} />);
-    })}
+    }
+    if(e.key === 'ArrowLeft' && selectedIndex !== 0) {
+      updateIndex(selectedIndex - 1);
+      if(selectedIndex < games.length - 3) {
+        document.body.scrollLeft -= 200;
+      }
+    }
+  }
+
+  games = games.map((game, i) => {
+    if(selectedIndex === i) {
+      return (<Game key={i} game={game} selected={true} />);
+    }
+    return (<Game key={i} game={game} selected={false} />);
+  });
+
+  return (<div className={styles.game_container}
+    // tabIndex='0'
+    onKeyDown={onkeydown}>
+    {games}
   </div>);
 }
 
