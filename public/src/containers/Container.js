@@ -18,7 +18,8 @@ const mapStateToProps = (state) => {
   return {
     games: state.games,
     date: state.date,
-    selectedIndex: state.selectedIndex
+    selectedIndex: state.selectedIndex,
+    error: state.error
   };
 };
 

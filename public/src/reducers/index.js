@@ -10,7 +10,8 @@ import {
 let initialState = {
   games: [],
   selectedIndex: 0,
-  date: ''
+  date: '',
+  error: false
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -18,10 +19,15 @@ const rootReducer = (state = initialState, action) => {
     case LOAD_GAMES:
       return Object.assign({}, state, {
         games: action.games,
+        error: false
       })
     case UPDATE_INDEX:
       return Object.assign({}, state, {
         selectedIndex: action.selectedIndex,
+      })
+    case ERROR_HANDLE:
+      return Object.assign({}, state, {
+        error: true
       })
     default:
       return state

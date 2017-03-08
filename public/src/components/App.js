@@ -3,8 +3,13 @@ import React from 'react';
 import styles from './../styles/main.css';
 import Game from './Game';
 import Loading from './Loading';
+import Error from './Error';
 
-const App = ({ loadGames, updateIndex, games, date, selectedIndex }) => {
+const App = ({ loadGames, updateIndex, games, date, selectedIndex, error }) => {
+  if(error) {
+    return (<Error />);
+  }
+
   if(!games.length) {
     loadGames();
     return (<Loading />);
