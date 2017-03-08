@@ -8,6 +8,8 @@
     "dev": "webpack-dev-server",
     "prebuild": "rm public/dist/bundle.js",
     "build": "webpack --progress --colors --config webpack.config.prod.js",
+    "build-server": "nodemon server/server.js",
+    "clear": "rm public/dist/bundle.js",
     "lint": "eslint server/**.js; eslint public/**.js; true"
   },
   "keywords": [],
