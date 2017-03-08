@@ -8,19 +8,25 @@
     "dev": "webpack-dev-server",
     "prebuild": "rm public/dist/bundle.js",
     "build": "webpack --progress --colors --config webpack.config.prod.js",
+    "build-server": "nodemon server/server.js",
+    "clear": "rm public/dist/bundle.js",
     "lint": "eslint server/**.js; eslint public/**.js; true"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.3",
     "body-parser": "^1.16.1",
     "compression": "^1.6.2",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "morgan": "^1.8.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",
@@ -34,6 +40,7 @@
     "nodemon": "^1.11.0",
     "postcss-loader": "^0.9.1",
     "react-hot-loader": "^3.0.0-beta.6",
+    "redux-logger": "^2.8.2",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.0"

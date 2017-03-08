@@ -1,4 +1,58 @@
-.main {
-  color: blue;
-  font-size: 20px;
+body {
+  background-image: url('http://mlb.mlb.com/mlb/images/devices/ballpark/1920x1080/1.jpg');
+  background-size: cover;
+  background-color: black;
+}
+
+.game_container {
+  white-space: nowrap;
+  padding: 20% 2%;
+}
+
+.game_thumb {
+  text-align: center;
+  display: inline-block;
+  color: white;
+  width: 175px;
+  height: 100px;
+  margin: 0 25px;
+}
+
+.game_title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.game_img {
+  background-color: #696969;
+  padding: 20px 0;
+}
+
+.game_details {
+  font-size: 14px;
+}
+
+.details_screen {
+  width: 250px;
+  height: 115px;
+  text-align: center;
+  border: 2px solid white;
+  position: absolute;
+}
+
+#hide_screen {
+  display: none;
+}
+
+#selected {
+  transform: scale(1.25);
+}
+
+#selected .game_img {
+  border-radius: 5px;
+  background-color: #D3D3D3;
+}
+
+#error {
+  color: white;
 }
