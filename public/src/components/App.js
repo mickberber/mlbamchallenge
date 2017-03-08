@@ -33,7 +33,6 @@ const App = ({ loadGames, updateIndex, games, date, selectedIndex }) => {
   });
 
   return (<div className={styles.game_container}
-    // tabIndex='0'
     onKeyDown={onkeydown}>
     {games}
   </div>);

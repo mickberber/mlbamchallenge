@@ -15,10 +15,10 @@ body {
   width: 200px;
   height: 150px;
   margin: 0 25px;
-  background-color: #D3D3D3;
+  background-color: #696969;
 }
 
 #selected {
   transform: scale(1.25);
-  background-color: #696969;
+  background-color: #D3D3D3;
 }
