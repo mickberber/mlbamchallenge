@@ -5,7 +5,14 @@ import Game from './Game';
 import Loading from './Loading';
 import Error from './Error';
 
-const App = ({ loadGames, updateIndex, toggleDetails, games, date, selectedIndex, showDetails, error }) => {
+const App = ({
+  loadGames,
+  updateIndex,
+  toggleDetails,
+  games,
+  selectedIndex,
+  showDetails,
+  error }) => {
   if(error) {
     return (<Error />);
   }

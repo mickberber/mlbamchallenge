@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-const default_url = 'http://gdx.mlb.com/components/game/mlb/year_2016/month_05/day_20/master_scoreboard.json';
 //ACTION CONSTANTS
 export const LOAD_GAMES = 'LOAD_GAMES';
 export const UPDATE_INDEX = 'UPDATE_INDEX';
@@ -36,12 +35,12 @@ const handleError = (error) => {
 }
 
 const fetchGames = (url) => {
-  return axios.get(default_url);
+  return axios.get(url);
 }
 
-export const getGames = () => {
+export const getGames = (url) => {
   return (dispatch) => {
-    return fetchGames().then((res) => {
+    return fetchGames(url).then((res) => {
       dispatch(loadGames(res.data.data.games.game))
     }).catch((error) => dispatch(handleError(error)))
   };

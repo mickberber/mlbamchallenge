@@ -11,7 +11,6 @@ import {
 const initialState = {
   games: [],
   selectedIndex: 0,
-  date: '',
   showDetails: false,
   error: false
 };
