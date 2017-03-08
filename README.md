@@ -32,12 +32,6 @@ After completing the build process:
 Instead of running a traditional node process, this is utilizing nodemon to refire the server incase it crashes during development.
 Navigate to http://localhost:3000/, (dependent on the PORT variable in your .env file)
 
-##Deployment(For Heroku)
-Login with your heroku credentials & create a new application
-- git remote add heroku https://git.heroku.com/mlbamchallenge.git
-- heroku git push mlbam-redux:master
-This will push the repository to Heroku and it will begin serving at the address you choose when registering your application.
-
 ##TODO:
 - Add testing for things like:
   - Redux actions
