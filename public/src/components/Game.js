@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from '../styles/main.css';
+import DetailScreen from './DetailScreen';
 
-const Game = ({game, selected}) => {
+const Game = ({game, selected, showDetails}) => {
   return (<div className={styles.game_thumb}
               id={selected ? styles.selected : ''}>
     <div className={styles.game_title}>
@@ -15,6 +16,7 @@ const Game = ({game, selected}) => {
       <div>{game.venue}</div>
       <div>{game.location}</div>
     </div>
+      {showDetails ? <DetailScreen game={game} /> : null}
   </div>)
 }
 

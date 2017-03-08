@@ -4,13 +4,15 @@ import createLogger from 'redux-logger';
 import {
   LOAD_GAMES,
   UPDATE_INDEX,
+  TOGGLE_DETAILS,
   ERROR_HANDLE
 } from '../actions/index';
 
-let initialState = {
+const initialState = {
   games: [],
   selectedIndex: 0,
   date: '',
+  showDetails: false,
   error: false
 };
 
@@ -23,7 +25,11 @@ const rootReducer = (state = initialState, action) => {
       })
     case UPDATE_INDEX:
       return Object.assign({}, state, {
-        selectedIndex: action.selectedIndex,
+        selectedIndex: action.selectedIndex
+      })
+    case TOGGLE_DETAILS:
+      return Object.assign({}, state, {
+        showDetails: state.showDetails ? false : true
       })
     case ERROR_HANDLE:
       return Object.assign({}, state, {

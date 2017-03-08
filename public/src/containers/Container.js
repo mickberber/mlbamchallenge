@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import App from '../components/App';
-import { getGames, updateIndex } from '../actions/index';
+import { getGames, updateIndex, toggleDetails } from '../actions/index';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     updateIndex: (newIndex) => {
       dispatch(updateIndex(newIndex));
+    },
+    toggleDetails: () => {
+      dispatch(toggleDetails());
     }
   };
 };
@@ -19,6 +22,7 @@ const mapStateToProps = (state) => {
     games: state.games,
     date: state.date,
     selectedIndex: state.selectedIndex,
+    showDetails: state.showDetails,
     error: state.error
   };
 };

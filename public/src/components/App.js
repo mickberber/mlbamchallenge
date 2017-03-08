@@ -5,7 +5,7 @@ import Game from './Game';
 import Loading from './Loading';
 import Error from './Error';
 
-const App = ({ loadGames, updateIndex, games, date, selectedIndex, error }) => {
+const App = ({ loadGames, updateIndex, toggleDetails, games, date, selectedIndex, showDetails, error }) => {
   if(error) {
     return (<Error />);
   }
@@ -28,11 +28,14 @@ const App = ({ loadGames, updateIndex, games, date, selectedIndex, error }) => {
         document.body.scrollLeft -= 200;
       }
     }
+    if(e.key === 'Enter') {
+      toggleDetails();
+    }
   }
 
   games = games.map((game, i) => {
     if(selectedIndex === i) {
-      return (<Game key={i} game={game} selected={true} />);
+      return (<Game key={i} game={game} selected={true} showDetails={showDetails} />);
     }
     return (<Game key={i} game={game} selected={false} />);
   });
