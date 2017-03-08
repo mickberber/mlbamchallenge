@@ -6,12 +6,12 @@ import Loading from './Loading';
 import Error from './Error';
 
 const App = ({ loadGames, updateIndex, toggleDetails, handleError, games, selectedIndex, showDetails, error }) => {
-  if(error) {
-    handleError(error);
-    return (<Error error={error} />);
-  }
 
   if(!games.length) {
+    if(error) {
+      handleError(error);
+      return (<Error error={error} />);
+    }
     loadGames();
     return (<Loading />);
   }
