@@ -32,7 +32,7 @@ const rootReducer = (state = initialState, action) => {
       })
     case ERROR_HANDLE:
       return Object.assign({}, state, {
-        error: true
+        error: action.error
       })
     default:
       return state

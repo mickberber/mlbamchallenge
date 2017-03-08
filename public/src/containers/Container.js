@@ -1,21 +1,22 @@
 import { connect } from 'react-redux';
 
 import App from '../components/App';
-import { getGames, updateIndex, toggleDetails } from '../actions/index';
+import { getGames, updateIndex, toggleDetails, handleError } from '../actions/index';
 import { urlConstructor } from '../utils';
 
-// const url = 'http://gdx.mlb.com/components/game/mlb/year_2017/month_03/day_08/master_scoreboard.json';
 const mapDispatchToProps = (dispatch) => {
   return {
     loadGames: () => {
       dispatch(getGames(urlConstructor()));
-      // dispatch(getGames(url));
     },
     updateIndex: (newIndex) => {
       dispatch(updateIndex(newIndex));
     },
     toggleDetails: () => {
       dispatch(toggleDetails());
+    },
+    handleError: (error) => {
+      dispatch(handleError(error));
     }
   };
 };

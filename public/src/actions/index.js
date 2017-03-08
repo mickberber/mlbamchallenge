@@ -27,7 +27,7 @@ const loadGames = (games) => {
   };
 }
 
-const handleError = (error) => {
+export const handleError = (error) => {
   return {
     type: ERROR_HANDLE,
     error
