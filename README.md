@@ -1,4 +1,4 @@
-#MLB AM 
+#MLB AM
 
 requires a .env file with PORT variable
 
@@ -30,5 +30,20 @@ This script has a prebuild script that runs before it, that will remove any old 
 After completing the build process:
 - npm run build-server
 Instead of running a traditional node process, this is utilizing nodemon to refire the server incase it crashes during development.
+Navigate to http://localhost:3000/, (dependent on the PORT variable in your .env file)
 
-##Deployment
+##Deployment(For Heroku)
+Login with your heroku credentials & create a new application
+- git remote add heroku https://git.heroku.com/mlbamchallenge.git
+- heroku git push mlbam-redux:master
+This will push the repository to Heroku and it will begin serving at the address you choose when registering your application.
+
+##TODO:
+- Add testing for things like:
+  - Redux actions
+  - AJAX calls
+  - Component rendering
+- Add date picking capability:
+  - Allow for user to check out games from Previous and Next days
+- Add extra styling
+  - Include extra assets and functionality for adding MLB team logos to DetailScreen

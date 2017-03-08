@@ -34,4 +34,5 @@ export const urlConstructor = () => {
   return (baseUrl + month + day + suffix);
   // default url to test with
   // return 'http://gdx.mlb.com/components/game/mlb/year_2016/month_05/day_20/master_scoreboard.json';
+
 }
